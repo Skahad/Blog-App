@@ -99,6 +99,7 @@ for (const [key, value] of Object.entries(SERVICE_URLS)) {
       responseType: value.responseType,
       headers: {
         authorization: getAccessToken(),
+        'Content-Type': value.isFormData ? 'multipart/form-data' : 'application/json', // ✅ dynamic content type
       },
       onUploadProgress: function (progressEvent) {
         if (showUploadProgress) {
