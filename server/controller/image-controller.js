@@ -1,5 +1,8 @@
 
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 let gfs;
 mongoose.connection.once("open",()=>{
@@ -9,7 +12,7 @@ mongoose.connection.once("open",()=>{
   console.log("GridFS bucket connected");
 })
 
-const BASE_URL = 'http://localhost:8000'
+const BASE_URL = process.env.BASE_URL
 export const uploadImage = async(request, response) =>{
   if(!request.file){
     return response.status(400).json({msg:"No file uploaded"})
