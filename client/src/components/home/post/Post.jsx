@@ -37,7 +37,8 @@ word-break: break-word
 `
 
 const Post = ({post}) => {
-  const url = post.picture ? post.picture : 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171'
+  const BASE_URL = import.meta.env.VITE_API_URL;
+  const url = post.picture ? `${BASE_URL}/file/${post.picture}` : 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171'
 
   return (
     <Container>

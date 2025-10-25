@@ -46,7 +46,8 @@ const CreatePost = () => {
   const {account} = useContext(DataContext)
   const navigate = useNavigate();
   
-  const url = post.picture ? post.picture: "/Createpost.jpg";
+  const BASE_URL = import.meta.env.VITE_API_URL;
+  const url = post.picture ? `${BASE_URL}/file/${post.picture}`: "/Createpost.jpg";
   
 
   useEffect(()=>{
@@ -57,7 +58,7 @@ const CreatePost = () => {
         data.append('file', file)
         //API call
         const response = await API.uploadFile(data)
-         setpost(prev => ({ ...prev, picture: response.data.ImageUrl }));
+         setpost(prev => ({ ...prev, picture: response.data.filename }));
       }
     }
     getImage();

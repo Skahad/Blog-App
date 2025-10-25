@@ -31,10 +31,10 @@ export const uploadImage = async(request, response) =>{
     uploadStream.end(request.file.buffer);
 
     uploadStream.on("finish", ()=>{
-      const ImageUrl = `${BASE_URL}/file/${filename}`;
+      // const ImageUrl = `${BASE_URL}/file/${filename}`;
       console.log("File stored", filename);
       response.status(200).json({msg: "File uploaded successfully",
-      filename, ImageUrl})
+      filename})
     })
     uploadStream.on("error", (error)=>{
       response.status(500).json({msg:"Error while uploading file", error: error.message})

@@ -28,8 +28,9 @@ const DetailsView = () => {
     }
   }
 
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
-  const url = post.picture ? post.picture : '/Createpost.jpg';
+  const url = post.picture ? `${BASE_URL}/file/${post.picture}` : '/Createpost.jpg';
   return (
     <div className='my-16 mx-1 md:mx-25'>
      <img className='w-full h-[50vh] object-cover' src={url} alt="" />
