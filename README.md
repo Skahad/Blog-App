@@ -138,6 +138,9 @@ Client will run on:
 
 ## 🌐 Deployment
 
+- 🚀 **Client deployed on Vercel**
+- 🧩 **Server deployed on Render**
+
 Deployed Version: [View Live Project-blogapp](https://blog-app-ahad.vercel.app/)
 
 ---
